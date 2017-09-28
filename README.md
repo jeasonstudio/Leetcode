@@ -6,6 +6,7 @@ One Problem Per Day！
 | --- | --- | ------ | ------ |
 | 98 | ValidateBinarySearchTree | [JavaScript](./98.ValidateBinarySearchTree.js) | Medium |
 | 338 | Counting Bits | [JavaScript](./338.CountingBits.js) | Medium |
+| 447 | NumberofBoomerangs | [JavaScript](./447.NumberofBoomerangs.js) | Easy |
 | 461 | Hamming Distance | [JavaScript](./461.HammingDistance.js) | Easy |
 | 476 | Number Complement | [JavaScript](./476.NumberComplement.js) | Easy |
 | 500 | Keyboard Row | [JavaScript](./500.KeyboardRow.js) | Easy |
