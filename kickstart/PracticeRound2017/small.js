@@ -5,11 +5,6 @@ const ALPHABET = [
 ]
 const MAXNAMECOUNT = 20
 
-const input = fs.readFileSync(path.join(__dirname, './A-small-practice.in'), { encoding: 'utf-8' }).split('\n')
-let countries = parseInt(input.shift())
-let countryKey = 1
-const countryMay = {}
-
 /**
  * @param {String[]} params
  * @returns {Number}
@@ -23,24 +18,34 @@ function getSize(params) {
  * @return {String} final king
  */
 function earliestInAlphabetical(kingsArray) {
-  let res = [kingsArray.shift()]
-  for (var key = 0; key < ALPHABET.length; key++) {
-    for (var index = 0; index < kingsArray.length; index++) {
-      const thisKing = kingsArray[index]
-      const thisKey = ALPHABET[key]
-      if (
-        thisKing.indexOf(thisKey) < 0
-        || thisKing.indexOf(thisKey) > res[0].indexOf(thisKey)
-      ) {
-        continue
-      } else if (thisKing.indexOf(thisKey) < res[0].indexOf(thisKey)) {
-        res = [thisKing]
-      } else if (thisKing.indexOf(thisKey) === res[0].indexOf(thisKey)) {
-        res.push(thisKing)
+  let res = kingsArray.map(item => ({
+    key: item,
+    value: 26
+  }))
+  for (var index = 0; index < MAXNAMECOUNT; index++) {
+    let newRes = []
+    res.map(({ key: item }, jndex) => {
+      const wz = ALPHABET.indexOf(item.split('')[index])
+      newRes[jndex] = {
+        key: item,
+        value: wz < 0 ? 26 : wz
+      }
+    })
+    let min = 26
+    let indexs = []
+    for (var index = 0; index < newRes.length; index++) {
+      if (newRes[index].value < min) {
+        min = newRes[index].value
+        indexs = [index]
+      } else if (newRes[index].value === min) {
+        indexs.push(index)
       }
     }
-    if (res.length === 1) {
-      return res[0]
+    if (indexs.length === 1) {return res[indexs[0]].key}
+    else {
+      res = res.filter(({ key }, index) => {
+        return indexs.indexOf(index) >= 0
+      })
     }
   }
 }
@@ -66,6 +71,11 @@ function judgeKing(peoples) {
     return earliestInAlphabetical(thisMaxPeoples)
   }
 }
+
+const input = fs.readFileSync(path.join(__dirname, './A-small-practice.in'), { encoding: 'utf-8' }).split('\n')
+let countries = parseInt(input.shift())
+let countryKey = 1
+
 
 do {
   // read input file and filter
