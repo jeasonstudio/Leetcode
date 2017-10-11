@@ -68,6 +68,7 @@ function judgeKing(peoples) {
   if (thisMaxPeoples.length === 1) {
     return thisMaxPeoples[0]
   } else {
+    console.log(thisMaxPeoples)
     return earliestInAlphabetical(thisMaxPeoples)
   }
 }
@@ -77,11 +78,18 @@ let countries = parseInt(input.shift())
 let countryKey = 1
 
 
-do {
-  // read input file and filter
-  const thisCountryPeople = parseInt(input.shift())
-  const peoples = input.splice(0, thisCountryPeople)
+// do {
+//   // read input file and filter
+//   const thisCountryPeople = parseInt(input.shift())
+//   const peoples = input.splice(0, thisCountryPeople)
 
-  console.log(`Case #${countryKey}: ${judgeKing(peoples)}`)
-  countryKey += 1
-} while (countryKey <= countries)
+//   console.log(`Case #${countryKey}: ${judgeKing(peoples)}`)
+//   countryKey += 1
+// } while (countryKey <= countries)
+
+const test = [ 'TFFLUTMWYONKXMRDIHB',
+'NDBKMRKUOZSLZALHQTC',
+'QTMRQOBSKNXPLGYLICC',
+'NXCTMPGBVHRNQLIWMS' ]
+
+earliestInAlphabetical(test)

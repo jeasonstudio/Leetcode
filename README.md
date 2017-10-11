@@ -4,6 +4,8 @@ One Problem Per Day！
 
 | No. | Title | Solution | Difficulty |
 | --- | --- | ------ | ------ |
+| 23 | MergekSortedLists | [JavaScript](./23.MergekSortedLists.js) | Hard |
+| 32 | LongestValidParentheses | [JavaScript](./32.LongestValidParentheses.js) | Hard |
 | 98 | ValidateBinarySearchTree | [JavaScript](./98.ValidateBinarySearchTree.js) | Medium |
 | 338 | Counting Bits | [JavaScript](./338.CountingBits.js) | Medium |
 | 421 | MaximumXORofTwoNumbersinanArray | [JavaScript](./421.MaximumXORofTwoNumbersinanArray.js) | Medium |
