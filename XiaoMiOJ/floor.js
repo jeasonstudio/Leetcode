@@ -7,12 +7,10 @@ function solution(line) {
   const n = parseInt(line, 10)
 
   if (n === 0) return 1
-  if (n === 1 || n === 2) return n
+  if (n === 0 || n === 1) return 1
 
   // 返回处理后的结果
-  return Math.floor(
-    1 / Math.sqrt(5) * (Math.pow((1 + Math.sqrt(5)) / 2, n + 1) - Math.pow((1 - Math.sqrt(5)) / 2, n + 1))
-  )
+  return solution(String(n - 1)) + solution(String(n - 2))
 }
 
 console.log(solution('5'))
