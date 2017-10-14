@@ -9,11 +9,13 @@ function solution(line) {
   let s2p = 0
 
   for (let index = 0; index < s3.length; index++) {
-    if (s1[s1p] === s3[index]) {
-      s1p += 1
-    }
-    else if (s2[s2p] === s3[index]) {
+    if (s2[s2p] === s3[index]) {
       s2p += 1
+      continue
+    }
+    else if (s1[s1p] === s3[index]) {
+      s1p += 1
+      continue
     }
     else {
       return 'false'
@@ -23,10 +25,11 @@ function solution(line) {
   return 'true'
 }
 
-console.log(solution('aabcc,dbbca,aadbbcbcac'))
+console.log(solution('dbbca,aabcc,aadbbcbcac'))
 console.log(solution('aabcc,dbbca,aadbbbaccc'))
 console.log(solution('a,b,ab'))
 console.log(solution('a,b,ba'))
 console.log(solution('a,b,ac'))
 console.log(solution('abc,bca,bcaabc'))
 console.log(solution('abc,bca,aabbcc'))
+1
