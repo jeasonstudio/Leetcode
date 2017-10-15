@@ -11,13 +11,16 @@ function solution(line) {
   if (sumr % 2 !== 0) return 'false'
   let half = sumr / 2
   let sum = 0
-  console.log(list, half)
   for (var index = 0; index < list.length; index++) {
-    sum += list.pop()
+    sum += list[index]
     if (sum === half) return 'true'
   }
   // 返回处理后的结果
   return 'false'
+}
+
+function f(len, half) {
+  max{F[i-1][v], F[i-1][v-C[i]]+W[i]}
 }
 
 
