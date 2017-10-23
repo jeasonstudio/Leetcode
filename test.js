@@ -1,10 +1,20 @@
-function caculate(array) {
-  for (let index = 0; index < array.length; index++) {
-    const left = array.slice(0, index).length > 0 ? array.slice(0, index).reduce((a, b) => (a * b)) : 1
-    const right = array.slice(index + 1).length > 0 ? array.slice(index + 1).reduce((a, b) => (a * b)) : 1
-    array[index] = left * right
+function juzhen(zhen, x) {
+  if (zhen.length <= 1 && zhen[0][0] !== x) return false
+  const newZhen = []
+  for (let index = 0; index < zhen.length; index++) {
+    for (var jndex = 0; jndex < zhen[index].length; jndex++) {
+      if (zhen[index][jndex] === x) return true
+    }
+    const [first, ...thisRow] = zhen[index]
+    newZhen[index] = thisRow
   }
-  return array
+  return juzhen(newZhen, x)
 }
 
-console.log(caculate([1,2,3,4]))
+console.log(juzhen([
+  [1,2,3,4,5],
+  [2,3,4,5,6],
+  [3,4,5,6,7],
+  [4,5,6,7,8],
+  [5,6,7,8,9]
+], 7))
