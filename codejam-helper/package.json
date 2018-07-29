@@ -1,14 +1,14 @@
 {
-  "name": "leetcode-es5",
+  "name": "codejam-helper",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jeason",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "big-integer": "^1.6.32"
+    "bluebird": "^3.5.1"
   }
 }
